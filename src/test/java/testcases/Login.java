@@ -1,14 +1,15 @@
 package testcases;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import Pages.LoginPage;
 import automationFramework.TestingBasicDriverOps;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Login extends TestingBasicDriverOps {
 
@@ -17,9 +18,7 @@ public class Login extends TestingBasicDriverOps {
 	@Test(groups = "regression")
 	@Parameters({ "username", "password" })
 	public void loginWithValidCredentials(String username, String password) {
-		// WebDriver driver = new ChromeDriver();
 		LoginPage lPage = new LoginPage(driver);
-		// lPage.login("admin", "admin123");
 		lPage.login(username, password);
 		boolean result = lPage.logginPassed();
 		Assert.assertTrue(result);
@@ -37,7 +36,6 @@ public class Login extends TestingBasicDriverOps {
 	@Test(groups = "regression")
 	@Parameters({ "username", "wrongPassword" })
 	public void loginWithoutValidCredentials(String username, String password) {
-		// WebDriver driver = new ChromeDriver();
 		LoginPage lPage = new LoginPage(driver);
 		lPage.login(username, password);
 		boolean result = lPage.logginFailed();

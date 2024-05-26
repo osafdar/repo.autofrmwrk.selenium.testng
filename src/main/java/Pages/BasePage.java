@@ -1,18 +1,20 @@
 package Pages;
 
 import java.time.Duration;
-import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.internal.Debug;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 	protected WebDriver driver;
 	protected By homePageDashboardTitle = By.className("oxd-text--h6");
+
+	public BasePage() {
+
+	}
 
 	protected void waitForElement(By elementName) {
 		try {
@@ -27,14 +29,15 @@ public class BasePage {
 		public String getCurrentURL() {
 			return driver.getCurrentUrl();
 		}
-	
+
 	protected boolean IsOnHomePage() {
 		waitForElement(this.homePageDashboardTitle);
 		WebElement element = driver.findElement(homePageDashboardTitle);
 		if (element != null && element.getText().equalsIgnoreCase("Dashboard")) {
 			return true;
-		} else
+		} else {
 			return false;
+		}
 	}
 
 }

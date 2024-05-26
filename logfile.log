@@ -20,3 +20,7 @@
 2024-05-26 01:31:46 INFO  Login:50 - Teardown method executed after method: loginWithValidCredentials
 2024-05-26 01:37:42 INFO  Login:50 - Teardown method executed after method: loginWithoutValidCredentials
 2024-05-26 01:37:45 INFO  Login:50 - Teardown method executed after method: loginWithValidCredentials
+2024-05-26 02:17:35 INFO  Login:50 - Teardown method executed after method: loginWithoutValidCredentials
+2024-05-26 02:17:39 INFO  Login:50 - Teardown method executed after method: loginWithValidCredentials
+2024-05-26 02:32:32 INFO  Login:48 - Teardown method executed after method: loginWithoutValidCredentials
+2024-05-26 02:32:37 INFO  Login:48 - Teardown method executed after method: loginWithValidCredentials

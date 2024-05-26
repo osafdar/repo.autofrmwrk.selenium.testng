@@ -6,8 +6,8 @@
       <class name="testcases.Login">
         <methods>
           <include name="loginWithValidCredentials"/>
-          <include name="tearDown"/>
           <include name="beforeSuite"/>
+          <include name="tearDown"/>
           <include name="afterSuite"/>
           <include name="afterMethod"/>
           <include name="loginWithoutValidCredentials"/>
