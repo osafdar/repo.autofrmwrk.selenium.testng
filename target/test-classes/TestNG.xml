@@ -1,0 +1,20 @@
+
+<suite name="LoginTS">
+	<!-- Parameters example -->
+	<test name="Dev" preserve-order="true">
+		<parameter name="username" value="admin" />
+		<parameter name="password" value="admin123" />
+		<parameter name="wrongPassword" value="abc" />
+		<classes>
+			<class name="testcases.Login">
+				<methods>
+
+					<include name="loginWithoutValidCredentials" priority="2" />
+					<include name="loginWithValidCredentials" priority="1" />
+
+				</methods>
+
+			</class>
+		</classes>
+	</test>
+</suite>

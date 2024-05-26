@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-05-26T01:37:30 CDT" name="LoginTS" finished-at="2024-05-26T01:37:45 CDT" duration-ms="14711">
+    <groups>
+      <group name="regression">
+        <method signature="Login.loginWithValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testcases.Login@28276e50]" name="loginWithValidCredentials" class="testcases.Login"/>
+        <method signature="Login.loginWithoutValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testcases.Login@28276e50]" name="loginWithoutValidCredentials" class="testcases.Login"/>
+      </group> <!-- regression -->
+    </groups>
+    <test started-at="2024-05-26T01:37:30 CDT" name="Dev" finished-at="2024-05-26T01:37:45 CDT" duration-ms="14711">
+      <class name="testcases.Login">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:24 CDT" name="beforeSuite" finished-at="2024-05-26T01:37:30 CDT" duration-ms="6320" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method signature="loginWithoutValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:31 CDT" name="loginWithoutValidCredentials" finished-at="2024-05-26T01:37:42 CDT" duration-ms="10969" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[abc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithoutValidCredentials -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:42 CDT" name="tearDown" finished-at="2024-05-26T01:37:42 CDT" duration-ms="37" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginWithoutValidCredentials status=SUCCESS method=Login.loginWithoutValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testcases.Login@28276e50] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:42 CDT" name="afterMethod" finished-at="2024-05-26T01:37:42 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method signature="loginWithValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:42 CDT" name="loginWithValidCredentials" finished-at="2024-05-26T01:37:45 CDT" duration-ms="3524" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithValidCredentials -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:45 CDT" name="tearDown" finished-at="2024-05-26T01:37:45 CDT" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginWithValidCredentials status=SUCCESS method=Login.loginWithValidCredentials(java.lang.String,java.lang.String)[pri:0, instance:testcases.Login@28276e50] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:45 CDT" name="afterMethod" finished-at="2024-05-26T01:37:45 CDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:testcases.Login@28276e50]" started-at="2024-05-26T01:37:45 CDT" name="afterSuite" finished-at="2024-05-26T01:37:47 CDT" duration-ms="1399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- testcases.Login -->
+    </test> <!-- Dev -->
+  </suite> <!-- LoginTS -->
+</testng-results>
