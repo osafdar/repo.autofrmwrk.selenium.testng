@@ -61,6 +61,8 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/TestNG.xml</suiteXmlFile>
 					</suiteXmlFiles>
+					<parallel>classes</parallel>
+					<threadCount>2</threadCount>
 				</configuration>
 			</plugin>
 		</plugins>

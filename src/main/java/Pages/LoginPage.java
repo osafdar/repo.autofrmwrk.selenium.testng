@@ -24,14 +24,14 @@ public class LoginPage extends BasePage {
 	}
 
 	// Set username
-	public void setUsername(String username) {
+	private void setUsername(String username) {
 		WebElement usernameInput = driver.findElement(usernameField);
 		usernameInput.clear();
 		usernameInput.sendKeys(username);
 	}
 
 	// Set password
-	public void setPassword(String password) {
+	private void setPassword(String password) {
 		WebElement passwordInput = driver.findElement(passwordField);
 		passwordInput.clear();
 		passwordInput.sendKeys(password);

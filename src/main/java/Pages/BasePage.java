@@ -26,9 +26,17 @@ public class BasePage {
 	}
 
 	// Get current URL
-		public String getCurrentURL() {
-			return driver.getCurrentUrl();
-		}
+	public String getCurrentURL() {
+		return driver.getCurrentUrl();
+	}
+
+	protected void click(By by) {
+		driver.findElement(by).click();
+	}
+
+	public void typeText(By by, String text) {
+		driver.findElement(by).sendKeys(text);
+	}
 
 	protected boolean IsOnHomePage() {
 		waitForElement(this.homePageDashboardTitle);

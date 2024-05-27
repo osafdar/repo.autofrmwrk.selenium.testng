@@ -1,20 +1,25 @@
-
 <suite name="LoginTS">
 	<!-- Parameters example -->
 	<test name="Dev" preserve-order="true">
 		<parameter name="username" value="admin" />
 		<parameter name="password" value="admin123" />
 		<parameter name="wrongPassword" value="abc" />
+
+		<parameter name="searchText" value="admin" />
+
 		<classes>
+			<class name="testcases.Home">
+				<methods>
+					<include name="searchUser" />
+				</methods>
+			</class>
 			<class name="testcases.Login">
 				<methods>
-
-					<include name="loginWithoutValidCredentials" priority="2" />
-					<include name="loginWithValidCredentials" priority="1" />
-
+					<include name="loginWithoutValidCredentials" priority="4" />
+					<include name="loginWithValidCredentials" priority="2" />
 				</methods>
-
 			</class>
+
 		</classes>
 	</test>
 </suite>

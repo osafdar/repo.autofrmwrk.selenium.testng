@@ -2,9 +2,11 @@ package testcases;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -12,15 +14,11 @@ import Pages.LoginPage;
 import automationFramework.TestingBasicDriverOps;
 
 public class Login extends TestingBasicDriverOps {
-
-	private static final Logger logger = LogManager.getLogger(Login.class);
-
+	
 	@Test(groups = "regression")
 	@Parameters({ "username", "password" })
 	public void loginWithValidCredentials(String username, String password) {
-		LoginPage lPage = new LoginPage(driver);
-		lPage.login(username, password);
-		boolean result = lPage.logginPassed();
+		boolean result = performLogin(username, password,driver);
 		Assert.assertTrue(result);
 
 		/*
@@ -33,6 +31,13 @@ public class Login extends TestingBasicDriverOps {
 
 	}
 
+	public static boolean performLogin(String username, String password,WebDriver driver) {
+		LoginPage lPage = new LoginPage(driver);
+		lPage.login(username, password);
+		boolean result = lPage.logginPassed();
+		return result;
+	}
+
 	@Test(groups = "regression")
 	@Parameters({ "username", "wrongPassword" })
 	public void loginWithoutValidCredentials(String username, String password) {
@@ -42,9 +47,18 @@ public class Login extends TestingBasicDriverOps {
 		Assert.assertTrue(result);
 	}
 
-	@AfterMethod
-	public void tearDown(ITestResult result) { // Get the name of
-		String methodName = result.getMethod().getMethodName();
-		logger.info("Teardown method executed after method: " + methodName);
+	@BeforeMethod
+	public void InstantiateLogger() {
+		if(logger==null) {
+			logger=LogManager.getLogger(Login.class);
+		}
 	}
+	
+	@AfterMethod
+	public void AfterMethod(ITestResult result) {
+		//String methodName = result.getMethod().getMethodName();
+		//return ("Teardown method executed after method: " + methodName);
+		logger.info(this.getExecutedMethodInfo(result));
+	}
+	
 }
