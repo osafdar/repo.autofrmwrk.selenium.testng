@@ -5,3 +5,6 @@
 2024-05-26 20:16:45 INFO  Login:61 - Teardown method executed after method: loginWithoutValidCredentials
 2024-05-26 20:16:48 INFO  Home:39 - Teardown method executed after method: searchUser
 2024-05-26 20:16:51 INFO  Login:61 - Teardown method executed after method: loginWithValidCredentials
+2024-05-26 20:34:08 INFO  Login:61 - Teardown method executed after method: loginWithoutValidCredentials
+2024-05-26 20:34:13 INFO  Login:61 - Teardown method executed after method: loginWithValidCredentials
+2024-05-26 20:34:16 INFO  Home:39 - Teardown method executed after method: searchUser

@@ -15,8 +15,8 @@
 			</class>
 			<class name="testcases.Login">
 				<methods>
-					<include name="loginWithoutValidCredentials" priority="4" />
-					<include name="loginWithValidCredentials" priority="2" />
+					<include name="loginWithoutValidCredentials" priority="2" />
+					<include name="loginWithValidCredentials" priority="1" />
 				</methods>
 			</class>
 
