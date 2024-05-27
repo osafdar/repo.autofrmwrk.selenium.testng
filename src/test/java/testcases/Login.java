@@ -14,11 +14,11 @@ import Pages.LoginPage;
 import automationFramework.TestingBasicDriverOps;
 
 public class Login extends TestingBasicDriverOps {
-	
+
 	@Test(groups = "regression")
 	@Parameters({ "username", "password" })
 	public void loginWithValidCredentials(String username, String password) {
-		boolean result = performLogin(username, password,driver);
+		boolean result = performLogin(username, password, driver);
 		Assert.assertTrue(result);
 
 		/*
@@ -31,7 +31,7 @@ public class Login extends TestingBasicDriverOps {
 
 	}
 
-	public static boolean performLogin(String username, String password,WebDriver driver) {
+	public static boolean performLogin(String username, String password, WebDriver driver) {
 		LoginPage lPage = new LoginPage(driver);
 		lPage.login(username, password);
 		boolean result = lPage.logginPassed();
@@ -49,16 +49,16 @@ public class Login extends TestingBasicDriverOps {
 
 	@BeforeMethod
 	public void InstantiateLogger() {
-		if(logger==null) {
-			logger=LogManager.getLogger(Login.class);
+		if (logger == null) {
+			logger = LogManager.getLogger(Login.class);
 		}
 	}
-	
+
 	@AfterMethod
 	public void AfterMethod(ITestResult result) {
-		//String methodName = result.getMethod().getMethodName();
-		//return ("Teardown method executed after method: " + methodName);
+		// String methodName = result.getMethod().getMethodName();
+		// return ("Teardown method executed after method: " + methodName);
 		logger.info(this.getExecutedMethodInfo(result));
 	}
-	
+
 }

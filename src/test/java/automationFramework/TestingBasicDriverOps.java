@@ -23,7 +23,6 @@ public class TestingBasicDriverOps {
 	public void afterSuite() {
 		driver.quit();
 	}
-
 	
 	public String getExecutedMethodInfo(ITestResult result) { // Get the name of
 		String methodName = result.getMethod().getMethodName();

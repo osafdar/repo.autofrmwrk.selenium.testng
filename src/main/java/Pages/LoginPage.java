@@ -11,8 +11,7 @@ public class LoginPage extends BasePage {
 	private By passwordField = By.name("password");
 	private By loginButton = By.className("oxd-button");
 	private By loginFailureIcon = By.className("bi-exclamation-circle");
-
-	private String URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+	public static String URL = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
 	// Constructor
 	public LoginPage(WebDriver driver) {
@@ -53,8 +52,6 @@ public class LoginPage extends BasePage {
 		}
 		return false;
 	}
-
-
 
 	// Perform login
 	public void login(String username, String password) {
