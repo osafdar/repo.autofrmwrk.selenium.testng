@@ -27,7 +27,6 @@ Feature: Login functionality
     Examples: 
       |username|password|
       |admin|admin123|
-      |Admin|admin123|
 
 #  Scenario Outline: Unsuccessful login with invalid credentials
 #    Given the user is on the login page

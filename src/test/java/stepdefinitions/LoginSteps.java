@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -7,12 +9,15 @@ import io.cucumber.java.en.Then;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 
 import Pages.HomePage;
 import Pages.LoginPage;
@@ -57,8 +62,9 @@ public class LoginSteps {
     public void the_user_should_be_redirected_to_the_homepage() throws InterruptedException {
         String expectedUrl = HomePage.URL;
         String actualUrl = driver.getCurrentUrl();
+        waitForElement(HomePage.adminLink);
         Assert.assertEquals(actualUrl, expectedUrl);
-        driver.quit();
+        //driver.quit();
     }
 
     /*
@@ -68,4 +74,16 @@ public class LoginSteps {
         Assert.assertTrue(errorMessage.isDisplayed());
         driver.quit();
     }*/
+    
+    @After
+    public void tearDown(Scenario scenario) {
+        if (scenario.isFailed()||true) {
+            // Capture screenshot and embed it in the report
+            byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot, "image/png", "Screenshot");
+        }
+        driver.quit();
+    }
+    
+   
 }
